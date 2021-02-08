@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SiteHeaderComponent } from './components/site-header/site-header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SiteHeaderComponent
   ],
   imports: [
     BrowserModule,

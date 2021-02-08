@@ -1,18 +1,10 @@
-<header class="toolbar" role="banner">
-  <img
-    alt="header-banner"
-    src="assets/images/0001.png"
-    class=""
-    height="290"
-  />
+<site-header></site-header>
+
+<div class="content" role="main">
   <fa-icon [icon]="faHome"></fa-icon>
   <fa-icon [icon]="faHandshake"></fa-icon>
   <fa-icon [icon]="faSignInAlt"></fa-icon>
-</header>
-
-<div class="content" role="main">
-  Content
-
+  <router-outlet></router-outlet>
 </div>
 
 <footer>
@@ -23,5 +15,3 @@
     height="184"
   />
 </footer>
-
-<router-outlet></router-outlet>
