@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { faHome, faHandshake, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,4 @@ import { faHome, faHandshake, faSignInAlt } from '@fortawesome/free-solid-svg-ic
 })
 export class AppComponent {
   title = 'events4me-angular';
-  faHome = faHome;
-  faHandshake = faHandshake;
-  faSignInAlt = faSignInAlt;
 }
