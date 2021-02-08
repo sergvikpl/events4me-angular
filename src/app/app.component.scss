@@ -4,11 +4,16 @@ site-header {
   width: 100%;
 }
 
-.site-content {
+site-content {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   width: 100%;
+  background-color: #fafafa;
+  padding-bottom: 180px;
+  @media (orientation: portrait) and (max-width: 480px), (orientation: landscape) and (max-width: 720px) {
+    padding-bottom: 20px;
+  }
 }
 
 site-footer {
