@@ -10,9 +10,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SiteHeaderComponent } from './components/site-header/site-header.component';
 import { SiteFooterComponent } from './components/site-footer/site-footer.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AgreementComponent } from './pages/agreement/agreement.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
+  { path: 'agreement', component: AgreementComponent }
 ]
 
 @NgModule({
@@ -20,7 +22,8 @@ const appRoutes: Routes = [
     AppComponent,
     SiteHeaderComponent,
     SiteFooterComponent,
-    HomeComponent
+    HomeComponent,
+    AgreementComponent
   ],
   imports: [
     BrowserModule,
