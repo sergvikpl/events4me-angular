@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SiteHeaderComponent } from './components/site-header/site-header.component';
+import { SiteFooterComponent } from './components/site-footer/site-footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SiteHeaderComponent
+    SiteHeaderComponent,
+    SiteFooterComponent
   ],
   imports: [
     BrowserModule,
