@@ -17,8 +17,7 @@ import { AgreementComponent } from './pages/agreement/agreement.component';
 import { LoginComponent } from './pages/login/login.component';
 import { EventsComponent } from './pages/events/events.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-
-
+import { EditEventComponent } from './pages/edit-event/edit-event.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     NavigationBarComponent,
     LoginComponent,
     EventsComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditEventComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { AgreementComponent } from './pages/agreement/agreement.component';
 import { LoginComponent } from './pages/login/login.component';
 import { EventsComponent } from './pages/events/events.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { EditEventComponent } from './pages/edit-event/edit-event.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -13,8 +14,10 @@ const routes: Routes = [
   { path: 'agreement', component: AgreementComponent },
   { path: 'login', component: LoginComponent },
 
-  { path: 'events', component: EventsComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'events', component: EventsComponent },
+  { path: 'events/add', component: EditEventComponent },
+  { path: 'events/card/edit', component: EditEventComponent },
 
   { path: '**', component: HomeComponent }
 ]
