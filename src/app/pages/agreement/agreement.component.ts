@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'agreement',
+  selector: 'agreement-page',
   templateUrl: './agreement.component.html',
   styleUrls: ['./agreement.component.scss']
 })
