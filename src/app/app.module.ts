@@ -15,8 +15,9 @@ import { NavigationBarComponent } from './components/navigation-bar/navigation-b
 import { HomeComponent } from './pages/home/home.component';
 import { AgreementComponent } from './pages/agreement/agreement.component';
 import { LoginComponent } from './pages/login/login.component';
-
-
+import { EventsComponent } from './pages/events/events.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { EditEventComponent } from './pages/edit-event/edit-event.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,10 @@ import { LoginComponent } from './pages/login/login.component';
     HomeComponent,
     AgreementComponent,
     NavigationBarComponent,
-    LoginComponent
+    LoginComponent,
+    EventsComponent,
+    ProfileComponent,
+    EditEventComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faHome, faHandshake, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faHandshake, faSignInAlt, faCalendarAlt, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'navigation-bar',
@@ -16,5 +16,7 @@ export class NavigationBarComponent implements OnInit {
   faHome = faHome;
   faHandshake = faHandshake;
   faSignInAlt = faSignInAlt;
+  faCalendarAlt = faCalendarAlt;
+  faAddressCard = faAddressCard;
 
 }

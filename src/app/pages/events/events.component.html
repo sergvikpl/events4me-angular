@@ -1,0 +1,82 @@
+<div class="search">
+  <div class="input-group">
+    <input type="text" class="form-control" id="searchConf" placeholder="Поиск...">
+    <span class="input-group-btn">
+      <button class="btn btn-search" id="searchBtn" type="button">
+        <fa-icon [icon]="faSearch"></fa-icon>
+      </button>
+    </span>
+  </div>
+  <a id="todaysConf">Показать только сегодняшние</a>
+</div>
+<div class="btnTop">
+  <button class="btn btn-primary btn-lg btnConf" role="button" (click)="goToAddEventPage()">
+    Добавить конференцию
+  </button>
+</div>
+<div class="eventsList" id="eventsList">
+  <table id="tableEvents" class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Название конференции</th>
+      <th scope="col">Дата и время проведения</th>
+      <th scope="col">Адреc проведения</th>
+      <th scope="col">Организатор</th>
+    </tr>
+    </thead>
+    <tbody id="eventsData">
+
+      <tr class="evBox" id="row1" (click)="goToEditEventPage()">
+        <td> name1 </td>
+        <td> dateStart1  -  dateEnd1 </td>
+        <td> address1 </td>
+        <td>
+          organizationName1
+          <img class="trashConf" onclick="event.stopPropagation()" src="assets/images/delete.png" id="d1" width="20px">
+        </td>
+        <td class="timestamp">dateStart1 - dateEnd1</td>
+      </tr>
+      <tr class="evBox" id="row2" (click)="goToEditEventPage()">
+        <td> name1 </td>
+        <td> dateStart1  -  dateEnd1 </td>
+        <td> address1 </td>
+        <td>
+          organizationName1
+          <img class="trashConf" onclick="event.stopPropagation()" src="assets/images/delete.png" id="d2" width="20px">
+        </td>
+        <td class="timestamp">dateStart1 - dateEnd1</td>
+      </tr>
+      <tr class="evBox" id="row3" (click)="goToEditEventPage()">
+        <td> name1 </td>
+        <td> dateStart1  -  dateEnd1 </td>
+        <td> address1 </td>
+        <td>
+          organizationName1
+          <img class="trashConf" onclick="event.stopPropagation()" src="assets/images/delete.png" id="d3" width="20px">
+        </td>
+        <td class="timestamp">dateStart1 - dateEnd1</td>
+      </tr>
+      <tr class="evBox" id="row4" (click)="goToEditEventPage()">
+        <td> name1 </td>
+        <td> dateStart1  -  dateEnd1 </td>
+        <td> address1 </td>
+        <td>
+          organizationName1
+          <img class="trashConf" onclick="event.stopPropagation()" src="assets/images/delete.png" id="d4" width="20px">
+        </td>
+        <td class="timestamp">dateStart1 - dateEnd1</td>
+      </tr>
+      <tr class="evBox" id="row5" (click)="goToEditEventPage()">
+        <td> name1 </td>
+        <td> dateStart1  -  dateEnd1 </td>
+        <td> address1 </td>
+        <td>
+          organizationName1
+          <img class="trashConf" onclick="event.stopPropagation()" src="assets/images/delete.png" id="d5" width="20px">
+        </td>
+        <td class="timestamp">dateStart1 - dateEnd1</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
