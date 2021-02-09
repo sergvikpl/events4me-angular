@@ -5,6 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AgreementComponent } from './pages/agreement/agreement.component';
 import { LoginComponent } from './pages/login/login.component';
 import { EventsComponent } from './pages/events/events.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   { path: 'events', component: EventsComponent },
+  { path: 'profile', component: ProfileComponent },
 
   { path: '**', component: HomeComponent }
 ]

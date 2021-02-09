@@ -16,6 +16,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AgreementComponent } from './pages/agreement/agreement.component';
 import { LoginComponent } from './pages/login/login.component';
 import { EventsComponent } from './pages/events/events.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 
@@ -28,7 +29,8 @@ import { EventsComponent } from './pages/events/events.component';
     AgreementComponent,
     NavigationBarComponent,
     LoginComponent,
-    EventsComponent
+    EventsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
