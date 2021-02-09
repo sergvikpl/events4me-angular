@@ -1,9 +1,13 @@
-<form (ngSubmit)="onSubmit()" class="autorization-form">
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+  class="autorization-form"
+>
   <h2>Вход в систему:</h2>
   <div class="inputs-container">
 
-    <input id="email" type="text" placeholder="Логин">
-    <input id="password" type="password" placeholder="Пароль">
+    <input id="email" type="text" placeholder="Логин" formControlName="email">
+    <input id="password" type="password" placeholder="Пароль" formControlName="password">
 
     <div class="remember-me">
       <label for="remember-me-checkbox" class="remember-me__label">
@@ -18,7 +22,13 @@
       </label>
     </div>
     <div class="submit-button-container">
-      <button type="submit" class="submit-button">Войти</button>
+      <button
+        type="submit"
+        [disabled]="form.invalid || form.disabled"
+        class="submit-button"
+      >
+        Войти
+      </button>
     </div>
   </div>
 </form>

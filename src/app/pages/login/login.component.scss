@@ -66,36 +66,8 @@ input::-webkit-input-placeholder { color: #92CBC5; }
   padding-left: 26.1px;
   background: white;
 }
-#email[class*=input-error], #password[class*=input-error] {
+#email[class*=input-error], #password[class*=input-error], .ng-valid {
   border: 2px solid #EA4101;
-}
-
-.submit-button-container {
-  font-family: Roboto;
-  font-style: normal;
-  text-align: center;
-  width: 100%;
-  max-width: 380px;
-  margin: 0 auto;
-}
-
-.submit-button  {
-  display: block;
-  text-align: center;
-  border: 0px;
-  margin: 0 auto;
-  width: 180px;
-  height: 50px;
-  background: #3F4F98;
-  border-radius: 6px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  text-align: center;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 26px;
-  color: white;
-  cursor: pointer;
 }
 
 .remember-me {
@@ -176,4 +148,37 @@ input::-webkit-input-placeholder { color: #92CBC5; }
   stroke-dasharray: 18px;
   stroke-dashoffset: 18px;
   transition: all 0.3s ease;
+}
+
+.submit-button-container {
+  font-family: Roboto;
+  font-style: normal;
+  text-align: center;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.submit-button {
+  display: block;
+  text-align: center;
+  border: 0px;
+  margin: 0 auto;
+  width: 180px;
+  height: 50px;
+  background: #3F4F98;
+  border-radius: 6px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+.submit-button[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
 }
