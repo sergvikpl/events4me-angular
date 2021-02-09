@@ -1,0 +1,23 @@
+site-header {
+  display: flex;
+  flex-grow: 0;
+  width: 100%;
+}
+
+.site-content {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fafafa;
+  padding-bottom: 180px;
+  @media (orientation: portrait) and (max-width: 480px), (orientation: landscape) and (max-width: 720px) {
+    padding-bottom: 20px;
+  }
+}
+
+site-footer {
+  display: flex;
+  flex-grow: 0;
+  width: 100%;
+}
