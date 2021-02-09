@@ -4,8 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { Routes, RouterModule } from '@angular/router';
-
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SiteHeaderComponent } from './components/site-header/site-header.component';
 import { SiteFooterComponent } from './components/site-footer/site-footer.component';
@@ -15,14 +13,6 @@ import { NavigationBarComponent } from './components/navigation-bar/navigation-b
 import { LoginComponent } from './pages/login/login.component';
 
 import { HttpClientModule } from '@angular/common/http';
-
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'agreement', component: AgreementComponent },
-  { path: 'login', component: LoginComponent },
-  { path: '**', component: HomeComponent }
-]
 
 @NgModule({
   declarations: [
@@ -36,7 +26,6 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule
