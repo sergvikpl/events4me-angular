@@ -3,7 +3,7 @@
   padding-left: 100px;
   overflow-y: auto;
 }
-@media (max-width: 740px) {
+@media (max-width: 760px) {
   .events-page{
     padding-left: 16px;
     padding-right: 16px;
@@ -188,4 +188,101 @@
 
 .events-table__timestamp {
   display: none;
+}
+
+
+.pagination {
+  list-style: none;
+}
+
+.pagination,
+.pagination__button a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination__button {
+  background-color: #fff;
+}
+
+.pagination__button a {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.pagination__button a:hover {
+  z-index: 3;
+  color: #23527c;
+  background-color: #eee;
+  border-color: #ddd;
+}
+
+.pagination__button:not([class*="pagination__button--current"]) a:focus,
+.pagination__button:not([class*="pagination__button--current"]) a:active {;
+  box-shadow: 0px 0px 10px 1px rgba(0,0,0,.25);
+  border-left-width:1px;
+}
+
+.pagination__button:first-of-type a {
+  border-left-width: 1px;
+}
+
+.pagination__button.pagination__button--current a {
+  z-index: 2;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+  cursor: default;
+}
+
+@media only screen and ( max-width: 40.063em ) {
+  .pagination__button {
+    // position: absolute;
+    // top: -9999px;
+    // left: -9999px;
+    display: none;
+  }
+
+  .pagination__button.pagination__button--current,
+  .pagination__button:first-of-type,
+  .pagination__button:last-of-type,
+  {
+    // position: initial;
+    // top: initial;
+    // left: initial;
+    display: initial;
+  }
+
+}
+
+@media only screen and ( max-width: 30.063em ) {
+  h1 { font-size: 1.35em !important; }
+  .pagination__button:nth-of-type(2) a { border-left-width: 1px; }
+}
+
+@media only screen and ( max-width: 15.063em ) {
+  .pagination__button { width: 50%;}
+  .pagination__button.pagination__button--current {
+    order: 2;
+    width: 100%;
+    border-left-width: 1px;
+  }
+}
+.pagination__button:first-child > a, .pagination__button:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.pagination__button:last-child > a, .pagination__button:last-child > span {
+  margin-left: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }

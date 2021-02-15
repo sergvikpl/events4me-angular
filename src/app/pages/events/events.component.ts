@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'events-page',
@@ -22,6 +22,8 @@ export class EventsComponent implements OnInit {
   }
 
   faSearch = faSearch
+  faChevronLeft = faChevronLeft
+  faChevronRight = faChevronRight
 
   events = [
     {id: "id1", name: "name1", dateStart: "dateStart1", dateEnd: "dateEnd2", address: "address1", organizationName: "organization1" },
