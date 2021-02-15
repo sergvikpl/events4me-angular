@@ -1,91 +1,83 @@
-<form class="confInfo ng-scope ng-pristine ng-valid" ng-controller="addEvent">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="col-lg-6 text-left">
-        <div class="form-group">
-          <label for="nameConf">Название конференции:</label>
-          <input type="text" class="form-control" id="nameConf" maxlength="145">
+<form
+  class="event-form"
+>
+
+  <div class="event-form__groups">
+    <div class="form-group">
+      <label for="nameConf" class="form-group__label">Название конференции:</label>
+      <input id="nameConf" type="text" maxlength="145" class="form-group__input">
+    </div>
+    <div class="form-group">
+      <label for="shortDesc" class="form-group__label">Краткое описание:</label>
+      <input  id="shortDesc" type="text" maxlength="256" class="form-group__input">
+    </div>
+    <div class="form-group">
+      <label for="description" class="form-group__label">Описание:</label>
+      <textarea  id="description" rows="7" maxlength="1000" class="form-group__input form-group__input--textarea"></textarea>
+    </div>
+  </div>
+
+  <div class="event-form__groups">
+    <!-- event-form__groups--organization -->
+    <label for="orgSelect" class="form-group__label">Организатор</label>
+    <select id="orgSelect" name="orgSelect" class="form-group__input">
+      <option value="Не выбрано">Не выбрано</option>
+    </select>
+    <img src="assets/images/foto.png" id="orgLogo" alt="Organization logo" class="form-group__image">
+    <h4 id="urlOrg" class="form-group__url"></h4>
+    <div class="only-employees">
+      <label for="cbx" class="only-employees__label">
+        <input id="cbx" type="checkbox" class="only-employees__invisible">
+        <div class="only-employees__checkbox">
+          <svg width="20px" height="20px" viewBox="0 0 20 20">
+            <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+            <polyline points="4 11 8 15 16 6"></polyline>
+          </svg>
         </div>
-        <div class="form-group">
-          <label for="shortDesc">Краткое описание:</label>
-          <input type="text" class="form-control" id="shortDesc" maxlength="256">
-        </div>
-        <div class="form-group">
-          <label for="description">Описание:</label>
-          <textarea class="form-control" id="description" rows="7" maxlength="1000"></textarea>
-        </div>
+        <span>Только для работников</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="event-form__groups">
+    <div class="upload">
+      <img id="confPhoto" src="assets/images/conf.png" class="upload__image">
+      <input id="fileSend" type="file" required="" onchange="readURL(this);" class="upload__input">
+    </div>
+    <div class="event-form__groups--datetime">
+      <h4 class="event-form__subtitle">Начало коференции:</h4>
+      <div class="form-group form-group--datetime">
+        <label for="dateStart" class="form-group__label">Дата:</label>
+        <input id="dateStart" type="date" required="" class="form-group__input">
       </div>
-      <div class="col-lg-6 text-left">
-        <div class="form-group organization">
-          <label for="orgSelect">Организатор</label>
-          <select id="orgSelect" name="orgSelect" class="form-control org-select">
-              <option value="Не выбрано">Не выбрано</option>
-          </select>
-          <img src="assets/images/foto.png" id="orgLogo" alt="fotoOrg">
-          <h4 id="urlOrg"></h4>
-
-          <div class="cntr">
-            <label for="cbx" class="label-employee">
-              <input id="cbx" type="checkbox" class="invisible">
-              <div class="checkbox">
-                <svg width="20px" height="20px" viewBox="0 0 20 20">
-                  <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
-                  <polyline points="4 11 8 15 16 6"></polyline>
-                </svg>
-              </div>
-              <span>Только для работников</span>
-            </label>
-          </div>
-
-        </div>
+      <div class="form-group form-group--datetime">
+        <label for="timeStart" class="form-group__label">Время:</label>
+        <input id="timeStart" type="time" required="" class="form-group__input">
       </div>
     </div>
-    <div class="col-md-12">
-      <div class="col-lg-6 text-left">
-        <div class="time">
-          <img id="confPhoto" src="assets/images/conf.png">
-          <input type="file" required="" id="fileSend" onchange="readURL(this);">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="dateStart mt20 form-group">
-                <h4>Начало коференции:</h4>
-                <div class="col-lg-6">
-                  <label for="dateStart">Дата:</label>
-                  <input type="date" class="form-control" required="" id="dateStart">
-                </div>
-                <div class="col-lg-6">
-                  <label for="timeStart">Время:</label>
-                  <input type="time" class="form-control" required="" id="timeStart">
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="dateEnd mt20 form-group">
-                <h4>Конец коференции:</h4>
-                <div class="col-lg-6">
-                  <label for="dateEnd">Дата:</label>
-                  <input type="date" class="form-control" required="" id="dateEnd">
-                </div>
-                <div class="col-lg-6">
-                  <label for="timeEnd">Время:</label>
-                  <input type="time" class="form-control" required="" id="timeEnd">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="event-form__groups--datetime">
+      <h4 class="event-form__subtitle">Конец коференции:</h4>
+      <div class="form-group form-group--datetime">
+        <label for="dateEnd" class="form-group__label">Дата:</label>
+        <input id="dateEnd" type="date" required="" class="form-group__input">
       </div>
-      <div class="col-lg-6 text-left" id="container">
-        <div class="address" id="subcontainer">
-          <label>Адрес:</label>
+      <div class="form-group form-group--datetime">
+        <label for="timeEnd" class="form-group__label">Время:</label>
+        <input  id="timeEnd" type="time" required="" class="form-group__input">
+      </div>
+    </div>
+  </div>
 
-        </div>
+  <div id="container" class="event-form__groups">
+    <div id="subcontainer" class="form-group form-group--map">
+      <label class="form-group__label">Адрес:</label>
+      <div id="map" class="form-group__map">
       </div>
     </div>
-    <div class="col-md-12 mar-btn">
-      <button id="save">Добавить</button>
-      <!-- ng-click="saveForm()" -->
-    </div>
+  </div>
+
+  <div class="event-form__submit-container">
+    <button id="save" type="submit" class="submit-button">Добавить</button>
   </div>
 
 </form>
