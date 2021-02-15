@@ -40,8 +40,9 @@
 
   <div class="event-form__groups">
     <div class="upload">
-      <img id="confPhoto" src="assets/images/conf.png" class="upload__image">
-      <input id="fileSend" type="file" required="" onchange="readURL(this);" class="upload__input">
+      <img #confPhoto [src]="uploadedEventImage" *ngIf="uploadedEventImage" class="upload__image">
+      <span class="upload__message upload__message--error" *ngIf="uploadMessageError">{{uploadMessageError}}</span>
+      <input #file type="file" accept='image/*' (change)="uploadEventImage(file.files)" class="upload__input"/>
     </div>
     <div class="event-form__groups--datetime">
       <h4 class="event-form__subtitle">Начало коференции:</h4>

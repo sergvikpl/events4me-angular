@@ -9,17 +9,16 @@ declare var ymaps:any;
 })
 export class EditEventComponent implements OnInit {
 
-  public map :any;
-  public myPlacemark :any;
+  public map :any
+  public myPlacemark :any
+
+  public imageFilePath;
+  public uploadMessageError: string;
+  uploadedEventImage: any = "assets/images/conf.png"
 
   constructor() { }
 
   ngOnInit(): void {
-
-  }
-
-  ngAfterContentChecked() {
-
     ymaps.ready().then(() => {
       this.map = new ymaps.Map('map', {
         center: [59.931597, 30.360431],
@@ -29,8 +28,8 @@ export class EditEventComponent implements OnInit {
       });
 
       // Слушаем клик на карте.
-      this.map.events.add('click', (e) => {
-        let coords = e.get('coords');
+      this.map.events.add('click', (event) => {
+        let coords = event.get('coords');
         // Если метка уже создана – просто передвигаем ее.
         if (this.myPlacemark) {
           this.myPlacemark.geometry.setCoordinates(coords);
@@ -45,11 +44,9 @@ export class EditEventComponent implements OnInit {
           });
         }
         this.getAddress(coords);
-        sessionStorage.setItem('coords',JSON.stringify(coords));
+        sessionStorage.setItem('coords', JSON.stringify(coords));
       });
-
     });
-
   }
 
   // Создание метки.
@@ -80,6 +77,23 @@ export class EditEventComponent implements OnInit {
       });
         sessionStorage.setItem('addressConf', JSON.stringify(firstGeoObject.getAddressLine()));
     });
+  }
+
+  uploadEventImage(files) {
+    if (files.length === 0)
+      return;
+    let fileType = files[0].type;
+    if (fileType.match(/image\/*/) == null) {
+      this.uploadedEventImage = null
+      this.uploadMessageError = "Пожалуйста, загрузите изображение для события.";
+      return;
+    }
+    let reader = new FileReader();
+    this.imageFilePath = files;
+    reader.readAsDataURL(files[0]);
+    reader.onload = (_event) => {
+      this.uploadedEventImage = reader.result;
+    }
   }
 
 }
