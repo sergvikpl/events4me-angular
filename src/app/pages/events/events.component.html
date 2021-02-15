@@ -1,82 +1,63 @@
-<div class="search">
-  <div class="input-group">
-    <input type="text" class="form-control" id="searchConf" placeholder="Поиск...">
-    <span class="input-group-btn">
-      <button class="btn btn-search" id="searchBtn" type="button">
-        <fa-icon [icon]="faSearch"></fa-icon>
-      </button>
-    </span>
+<div class="events-page">
+  <div class="search">
+    <div class="search__input-group">
+      <input id="searchConf" type="text" placeholder="Поиск..." class="search__input">
+      <span class="search__button-group">
+        <button id="searchBtn" type="button" class="search__button">
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </button>
+      </span>
+    </div>
+    <a id="todaysConf" class="search__filter">Показать только сегодняшние</a>
   </div>
-  <a id="todaysConf">Показать только сегодняшние</a>
-</div>
-<div class="btnTop">
-  <button class="btn btn-primary btn-lg btnConf" role="button" (click)="goToAddEventPage()">
+
+  <button role="button" (click)="goToAddEventPage()" class="add-button">
     Добавить конференцию
   </button>
-</div>
-<div class="eventsList" id="eventsList">
-  <table id="tableEvents" class="table table-bordered">
+
+  <table id="tableEvents" class="events-table">
     <thead>
-    <tr>
-      <th scope="col">Название конференции</th>
-      <th scope="col">Дата и время проведения</th>
-      <th scope="col">Адреc проведения</th>
-      <th scope="col">Организатор</th>
-    </tr>
+      <tr>
+        <th scope="col" class="events-table__cell events-table__cell--header">Название конференции</th>
+        <th scope="col" class="events-table__cell events-table__cell--header">Дата и время проведения</th>
+        <th scope="col" class="events-table__cell events-table__cell--header">Адреc проведения</th>
+        <th scope="col" class="events-table__cell events-table__cell--header">Организатор</th>
+        <th scope="col" class="events-table__cell events-table__cell--header events-table__cell--delete"></th>
+      </tr>
     </thead>
-    <tbody id="eventsData">
-
-      <tr class="evBox" id="row1" (click)="goToEditEventPage()">
-        <td> name1 </td>
-        <td> dateStart1  -  dateEnd1 </td>
-        <td> address1 </td>
-        <td>
-          organizationName1
-          <img class="trashConf" onclick="event.stopPropagation()" src="assets/images/delete.png" id="d1" width="20px">
+    <tbody id="eventsData" *ngFor="let event of events">
+      <tr id="row1" (click)="goToEditEventPage()" class="events-table__row">
+        <td class="events-table__cell"> {{ event.name }} </td>
+        <td class="events-table__cell"> {{ event.dateStart }}  - {{ event.dateEnd }} </td>
+        <td class="events-table__cell"> {{ event.address }} </td>
+        <td class="events-table__cell">
+          {{ event.organizationName }}
+          <span class="events-table__timestamp"> {{ event.dateStart }} - {{ event.dateEnd }} </span>
         </td>
-        <td class="timestamp">dateStart1 - dateEnd1</td>
-      </tr>
-      <tr class="evBox" id="row2" (click)="goToEditEventPage()">
-        <td> name1 </td>
-        <td> dateStart1  -  dateEnd1 </td>
-        <td> address1 </td>
-        <td>
-          organizationName1
-          <img class="trashConf" onclick="event.stopPropagation()" src="assets/images/delete.png" id="d2" width="20px">
+        <td class="events-table__cell events-table__cell--delete">
+          <img id="event.id"  width="20px" onclick="event.stopPropagation()" src="assets/images/delete.png" class="events-table__delete-button">
         </td>
-        <td class="timestamp">dateStart1 - dateEnd1</td>
       </tr>
-      <tr class="evBox" id="row3" (click)="goToEditEventPage()">
-        <td> name1 </td>
-        <td> dateStart1  -  dateEnd1 </td>
-        <td> address1 </td>
-        <td>
-          organizationName1
-          <img class="trashConf" onclick="event.stopPropagation()" src="assets/images/delete.png" id="d3" width="20px">
-        </td>
-        <td class="timestamp">dateStart1 - dateEnd1</td>
-      </tr>
-      <tr class="evBox" id="row4" (click)="goToEditEventPage()">
-        <td> name1 </td>
-        <td> dateStart1  -  dateEnd1 </td>
-        <td> address1 </td>
-        <td>
-          organizationName1
-          <img class="trashConf" onclick="event.stopPropagation()" src="assets/images/delete.png" id="d4" width="20px">
-        </td>
-        <td class="timestamp">dateStart1 - dateEnd1</td>
-      </tr>
-      <tr class="evBox" id="row5" (click)="goToEditEventPage()">
-        <td> name1 </td>
-        <td> dateStart1  -  dateEnd1 </td>
-        <td> address1 </td>
-        <td>
-          organizationName1
-          <img class="trashConf" onclick="event.stopPropagation()" src="assets/images/delete.png" id="d5" width="20px">
-        </td>
-        <td class="timestamp">dateStart1 - dateEnd1</td>
-      </tr>
-
     </tbody>
   </table>
+  <ul role="menubar" aria-label="Pagination" class="pagination">
+      <li class="pagination__button"><a href="events"><span>
+        <fa-icon [icon]="faChevronLeft"></fa-icon>
+      </span></a></li>
+      <li class="pagination__button pagination__button--current"><a href="events">1</a></li>
+      <li class="pagination__button"><a href="events">2</a></li>
+      <li class="pagination__button"><a href="events">3</a></li>
+      <li class="pagination__button"><a href="events">4</a></li>
+      <li class="pagination__button"><a href="events">5</a></li>
+      <li class="pagination__button"><a href="events">6</a></li>
+      <li class="pagination__button"><a href="events">7</a></li>
+      <li class="pagination__button"><a href="events">8</a></li>
+      <li class="pagination__button"><a href="events">9</a></li>
+      <li class="pagination__button"><a href="events">10</a></li>
+      <li class="pagination__button"><a href="events"><span>
+        <fa-icon [icon]="faChevronRight"></fa-icon>
+      </span></a></li>
+    </ul>
+
+
 </div>
