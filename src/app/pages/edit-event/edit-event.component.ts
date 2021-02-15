@@ -29,7 +29,7 @@ export class EditEventComponent implements OnInit {
       });
 
       // Слушаем клик на карте.
-      this.map.events.add('click', function (e) {
+      this.map.events.add('click', (e) => {
         let coords = e.get('coords');
         // Если метка уже создана – просто передвигаем ее.
         if (this.myPlacemark) {
@@ -37,14 +37,14 @@ export class EditEventComponent implements OnInit {
         }
         // Если нет – создаем.
         else {
-          this.myPlacemark = createPlacemark(coords);
+          this.myPlacemark = this.createPlacemark(coords);
           this.map.geoObjects.add(this.myPlacemark);
           // Слушаем событие окончания перетаскивания на метке.
-          this.myPlacemark.events.add('dragend', function () {
-              getAddress(this.myPlacemark.geometry.getCoordinates());
+          this.myPlacemark.events.add('dragend', () => {
+              this.getAddress(this.myPlacemark.geometry.getCoordinates());
           });
         }
-        getAddress(coords);
+        this.getAddress(coords);
         sessionStorage.setItem('coords',JSON.stringify(coords));
       });
 
@@ -65,7 +65,7 @@ export class EditEventComponent implements OnInit {
   // Определяем адрес по координатам (обратное геокодирование).
   getAddress(coords) {
     this.myPlacemark.properties.set('iconCaption', 'поиск...');
-    ymaps.geocode(coords).then(function (res) {
+    ymaps.geocode(coords).then((res) => {
       let firstGeoObject = res.geoObjects.get(0);
       this.myPlacemark.properties.set({
         // Формируем строку с данными об объекте.
